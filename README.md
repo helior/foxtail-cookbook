@@ -1,6 +1,17 @@
 # Foxtail Cookbook
+### Todos:
+#### Front-end application TODOs
+- [x] Install NodeJS
 
-TODO: Enter the cookbook description here.
+#### CMS Todos
+- [ ] Install Apache
+- [ ] Configure Apache Virtualhost on port 8080
+- [ ] Install MySQL
+- [ ] Install PHP-FPM
+- [ ] Install Drupal from Drush Makefile
+- [ ] Setup common `settings.php` with environment overrides
+
+
 
 ## Supported Platforms
 
