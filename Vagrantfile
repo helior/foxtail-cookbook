@@ -12,10 +12,14 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = 'latest'
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {}
+    chef.json = {
+      "apache"  => {
+        "listen_ports" => ["8080"]
+      }
+    }
 
     chef.run_list = [
-      'recipe[foxtail-cookbook::default]'
+      'recipe[foxtail-cookbook::default]', 'recipe[foxtail-cookbook::apache]'
     ]
   end
 end
