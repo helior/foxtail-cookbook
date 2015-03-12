@@ -6,3 +6,4 @@ description      'Installs/Configures Foxtail Cookbook'
 version          '0.1.0'
 
 depends 'nodejs'
+depends 'apache2'
