@@ -1,9 +1,11 @@
 name             'foxtail-cookbook'
-maintainer       'Helior Colorado'
-maintainer_email 'me@helior.info'
+maintainer       'Helior Colorado, Chiru Chakka'
+maintainer_email 'me@helior.info, vivek_chiru@yahoo.com'
 license          'All rights reserved'
 description      'Installs/Configures Foxtail Cookbook'
 version          '0.1.0'
 
 depends 'nodejs'
 depends 'apache2'
+depends 'php' , '~> 1.5.0'
+depends 'mysql', '~> 6.0'

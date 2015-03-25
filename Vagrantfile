@@ -13,13 +13,14 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
-      "apache"  => {
-        "listen_ports" => ["8080"]
+      "apache" => {
+        "listen_ports" => ["8080"],
+        "mpm" => 'prefork'
       }
     }
 
     chef.run_list = [
-      'recipe[foxtail-cookbook::default]', 'recipe[foxtail-cookbook::apache]'
+      'recipe[foxtail-cookbook::default]'
     ]
   end
 end
