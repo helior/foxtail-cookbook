@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
     chef.json = {
       "apache" => {
         "listen_ports" => ["8080"],
+        "server_name" => 'site.foxtail.com',
         "mpm" => 'prefork'
       }
     }

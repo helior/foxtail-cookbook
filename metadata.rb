@@ -7,5 +7,6 @@ version          '0.1.0'
 
 depends 'nodejs'
 depends 'apache2'
-depends 'php' , '~> 1.5.0'
+depends 'php', '~> 1.5.0'
 depends 'mysql', '~> 6.0'
+depends 'git', '~> 4.1.0'
