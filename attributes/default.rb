@@ -1,6 +1,1 @@
-default['foxtail']['user'] = 'foxtail'
-default['foxtail']['group'] = 'foxtail'
-default['foxtail']['docroot'] = '/var/www/foxtail'
-default['foxtail']['web_port'] = '8080'
-default['foxtail']['appUrl'] = 'site.foxtail.com'
-default['apache']['servername'] = 'site.foxtail.com'
+default['motd']['additional_text'] = 'This system only authorized for BLAHD, Unauthorized access is strictly prohibited!!'

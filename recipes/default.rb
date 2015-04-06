@@ -2,7 +2,7 @@
 # Cookbook Name:: Foxtail Cookbook
 # Recipe:: default
 #
-# Copyright (C) 2015 Helior Colorado
+# Copyright (C) 2015 Helior Colorado, Chiru Chakka
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -14,34 +14,10 @@ include_recipe "apache2::mod_rewrite"
 include_recipe "php"
 include_recipe "php::module_mysql"
 include_recipe "git"
+include_recipe "motd"
 
-group node['foxtail']['group']
-
-user node['foxtail']['user'] do
-  group node['foxtail']['group']
-  system true
-  shell '/bin/bash' 
-end
 
 apache_site '000-default' do
-  enable false
-end
-
-template "#{node['apache']['dir']}/sites-available/foxtail.conf" do
-  source 'apache2.conf.erb'
-  notifies :restart, 'service[apache2]'
-end
-
-directory node['foxtail']['docroot'] do
-  action :create
-  recursive true
-end
-
-cookbook_file "#{node['foxtail']['docroot']}/index.html" do
-  mode '0644'
-end
-
-apache_site 'foxtail.conf' do
   enable true
 end
 
@@ -66,3 +42,5 @@ end
 %w{ php5-fpm }.each do |a_package|
   package a_package
 end
+
+
