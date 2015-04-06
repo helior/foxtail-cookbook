@@ -12,8 +12,9 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = 'latest'
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {
+    chef.json = { 
       "apache" => {
+        "default_site_enabled" => true,
         "listen_ports" => ["8080"],
         "server_name" => 'site.foxtail.com',
         "mpm" => 'prefork'

@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+node.set['apache']['version'] = '2.4'
+node.set["apache"]["pid_file"]  = "/var/run/apache2/apache2.pid"
 include_recipe "nodejs"
 include_recipe "apache2"
 include_recipe "apache2::mod_php5"
@@ -15,11 +17,6 @@ include_recipe "php"
 include_recipe "php::module_mysql"
 include_recipe "git"
 include_recipe "motd"
-
-
-apache_site '000-default' do
-  enable true
-end
 
 mysql_service 'default' do
   version '5.6'
