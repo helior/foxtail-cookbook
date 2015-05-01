@@ -1,0 +1,1 @@
+default['motd']['additional_text'] = 'This system only authorized for BLAHD, Unauthorized access is strictly prohibited!!'
